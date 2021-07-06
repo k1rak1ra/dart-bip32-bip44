@@ -63,7 +63,7 @@ Add it to your `pubspec.yaml`:
 
 ```
 dependencies:
-  bitcoin_bip32: ^0.2.0
+  dart_bitcoin_bip32: ^0.2.0
 ```
 
 ## Licence overview
