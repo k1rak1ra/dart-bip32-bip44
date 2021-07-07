@@ -1,4 +1,4 @@
-# BIP32
+# BIP32-BIP44
 
 [![pub package](https://img.shields.io/pub/v/dart_bip32_bip44.svg)](https://pub.dartlang.org/packages/dart_bip32_bip44)
 
@@ -71,7 +71,7 @@ Add it to your `pubspec.yaml`:
 
 ```
 dependencies:
-  dart_bitcoin_bip32: ^0.2.0
+  dart_bip32_bip44: ^0.2.0
 ```
 
 ## Licence overview
