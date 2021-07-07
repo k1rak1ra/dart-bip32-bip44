@@ -280,11 +280,8 @@ abstract class ExtendedKey {
     return Base58Codec(alphabet).encode(payload);
   }
 
-  String toHex() {
-    var payload = _serialize();
-    payload.addAll(_checksum());
-
-    return hex.encode(payload);
+  String privateKeyHex() {
+    return hex.encode(_serializedKey());
   }
 }
 
