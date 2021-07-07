@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 
-import 'package:dart_bitcoin_bip32/dart_bitcoin_bip32.dart';
-import 'package:dart_bitcoin_bip32/src/crypto.dart';
+import 'package:dart_bip32_bip44/dart_bip32_bip44.dart';
+import 'package:dart_bip32_bip44/src/crypto.dart';
 
 void main() {
   const vector1 = <String, dynamic>{

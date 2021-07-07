@@ -1,8 +1,8 @@
-name: dart_bitcoin_bip32
+name: dart_bip32_bip44
 version: 0.2.0
 description: Library implementing Bitcoins BIP32 (Hierarchical Deterministic key derivation) specification in a Flutter friendly fashion.
-homepage: https://github.com/k1rak1ra/dart-bitcoin-bip32
-repository: https://github.com/k1rak1ra/dart-bitcoin-bip32
+homepage: https://github.com/k1rak1ra/dart-bip32-bip44
+repository: https://github.com/k1rak1ra/dart-bip32-bip44
 
 dependencies:
     pointycastle: ^3.1.3

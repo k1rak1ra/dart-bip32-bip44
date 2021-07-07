@@ -1,9 +1,10 @@
 # BIP32
 
-[![pub package](https://img.shields.io/pub/v/dart_bitcoin_bip32.svg)](https://pub.dartlang.org/packages/dart_bitcoin_bip32)
+[![pub package](https://img.shields.io/pub/v/dart_bip32_bip44.svg)](https://pub.dartlang.org/packages/dart_bip32_bip44)
 
 An implementation of the [BIP32 spec] for Hierarchical Deterministic Bitcoin
 addresses. No [superimposing wallet structure] has been defined.
+Also supports BIP44 paths such as `m/44'/60'/0'/0/0` for Ethereum/Smart Chain
 
 Forked from abandoned repo and updated to work with latest dependencies and null-safety because I need this library for a project
 
@@ -14,17 +15,24 @@ HD key or with a hex encoded seed.
 
 Look at the tests to see more elaborate uses.
 
-### With a seed
+### With a seed - BIP44 Ethereum web3dart example
 
 ```
   Chain chain = Chain.seed(hex.encode(utf8.encode("some seed")));
-  ExtendedPrivateKey key = chain.forPath("m/0/100");
-  print(key);
-  // => xprv9ww7sMFLzJN5LhdyGB9zfhm9MAVZ8P97iTWQtVeAg2rA9MPZfJUESWe6NaSu44zz44QBjWtwH9HNfJ4vFiUwfrTCvf7AGrgYpXe17bfh2Je
+  ExtendedPrivateKey key = chain.forPath("m/44'/60'/0'/0/0");
+  Credentials credentials = EthPrivateKey.fromHex(privateKey.privateKeyHex()); //web3dart
+  var address = await credentials.extractAddress(); //web3dart
 ```
 
 The `key` has a field called `key` which contains a `BigInt`. This is the actual
-key.
+key. For your convenience, you can get it in hex format by calling privateKeyHex().
+You can get a seed from a recovery phrase/mnemonic using bip39.
+
+```
+String seed = bip39.mnemonicToSeedHex("word word word word word word word word word word word word");
+Chain chain = Chain.seed(seed);  
+...
+```
 
 ### Importing a HD private key
 
